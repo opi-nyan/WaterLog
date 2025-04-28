@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		318845552DB910DD009D9043 /* SimpleWaterLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318845542DB910DD009D9043 /* SimpleWaterLogApp.swift */; };
+		318845572DB910DD009D9043 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318845562DB910DD009D9043 /* ContentView.swift */; };
+		318845592DB910E0009D9043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318845582DB910E0009D9043 /* Assets.xcassets */; };
+		3188455C2DB910E0009D9043 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3188455B2DB910E0009D9043 /* Preview Assets.xcassets */; };
+		318845652DB91A14009D9043 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318845642DB91A14009D9043 /* HealthKitManager.swift */; };
+		318B38AB2DB92518001955AC /* WaterPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B38AA2DB92518001955AC /* WaterPreset.swift */; };
+		318B38AD2DB9254B001955AC /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B38AC2DB9254B001955AC /* PresetManager.swift */; };
+		31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		318845512DB910DD009D9043 /* SimpleWaterLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWaterLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		318845542DB910DD009D9043 /* SimpleWaterLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWaterLogApp.swift; sourceTree = "<group>"; };
+		318845562DB910DD009D9043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		318845582DB910E0009D9043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3188455B2DB910E0009D9043 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		318845622DB91135009D9043 /* SimpleWaterLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleWaterLog.entitlements; sourceTree = "<group>"; };
+		318845632DB911E6009D9043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		318845642DB91A14009D9043 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		318B38AA2DB92518001955AC /* WaterPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterPreset.swift; sourceTree = "<group>"; };
+		318B38AC2DB9254B001955AC /* PresetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManager.swift; sourceTree = "<group>"; };
+		31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFixedWaterIntent.swift.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3188454E2DB910DD009D9043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		318845482DB910DD009D9043 = {
+			isa = PBXGroup;
+			children = (
+				31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */,
+				318845532DB910DD009D9043 /* SimpleWaterLog */,
+				318845522DB910DD009D9043 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		318845522DB910DD009D9043 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				318845512DB910DD009D9043 /* SimpleWaterLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		318845532DB910DD009D9043 /* SimpleWaterLog */ = {
+			isa = PBXGroup;
+			children = (
+				318845632DB911E6009D9043 /* Info.plist */,
+				318845622DB91135009D9043 /* SimpleWaterLog.entitlements */,
+				318845542DB910DD009D9043 /* SimpleWaterLogApp.swift */,
+				318845562DB910DD009D9043 /* ContentView.swift */,
+				318845582DB910E0009D9043 /* Assets.xcassets */,
+				3188455A2DB910E0009D9043 /* Preview Content */,
+				318845642DB91A14009D9043 /* HealthKitManager.swift */,
+				318B38AA2DB92518001955AC /* WaterPreset.swift */,
+				318B38AC2DB9254B001955AC /* PresetManager.swift */,
+			);
+			path = SimpleWaterLog;
+			sourceTree = "<group>";
+		};
+		3188455A2DB910E0009D9043 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3188455B2DB910E0009D9043 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		318845502DB910DD009D9043 /* SimpleWaterLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3188455F2DB910E0009D9043 /* Build configuration list for PBXNativeTarget "SimpleWaterLog" */;
+			buildPhases = (
+				3188454D2DB910DD009D9043 /* Sources */,
+				3188454E2DB910DD009D9043 /* Frameworks */,
+				3188454F2DB910DD009D9043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleWaterLog;
+			productName = SimpleWaterLog;
+			productReference = 318845512DB910DD009D9043 /* SimpleWaterLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		318845492DB910DD009D9043 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					318845502DB910DD009D9043 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 3188454C2DB910DD009D9043 /* Build configuration list for PBXProject "SimpleWaterLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 318845482DB910DD009D9043;
+			productRefGroup = 318845522DB910DD009D9043 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				318845502DB910DD009D9043 /* SimpleWaterLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3188454F2DB910DD009D9043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3188455C2DB910E0009D9043 /* Preview Assets.xcassets in Resources */,
+				318845592DB910E0009D9043 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3188454D2DB910DD009D9043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift in Sources */,
+				318845572DB910DD009D9043 /* ContentView.swift in Sources */,
+				318845552DB910DD009D9043 /* SimpleWaterLogApp.swift in Sources */,
+				318B38AB2DB92518001955AC /* WaterPreset.swift in Sources */,
+				318B38AD2DB9254B001955AC /* PresetManager.swift in Sources */,
+				318845652DB91A14009D9043 /* HealthKitManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3188455D2DB910E0009D9043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3188455E2DB910E0009D9043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		318845602DB910E0009D9043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleWaterLog/SimpleWaterLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleWaterLog/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RFSYP6H8K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleWaterLog/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "記録した水分摂取量をヘルスケアアプリに保存するために使用します。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "記録した水分摂取量をヘルスケアアプリに保存するために使用します。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opinyan.SimpleWaterLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		318845612DB910E0009D9043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleWaterLog/SimpleWaterLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleWaterLog/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RFSYP6H8K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleWaterLog/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "記録した水分摂取量をヘルスケアアプリに保存するために使用します。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "記録した水分摂取量をヘルスケアアプリに保存するために使用します。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opinyan.SimpleWaterLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3188454C2DB910DD009D9043 /* Build configuration list for PBXProject "SimpleWaterLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3188455D2DB910E0009D9043 /* Debug */,
+				3188455E2DB910E0009D9043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3188455F2DB910E0009D9043 /* Build configuration list for PBXNativeTarget "SimpleWaterLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				318845602DB910E0009D9043 /* Debug */,
+				318845612DB910E0009D9043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 318845492DB910DD009D9043 /* Project object */;
+}
