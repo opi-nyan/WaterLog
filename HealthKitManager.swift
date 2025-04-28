@@ -2,45 +2,46 @@ import Foundation
 import HealthKit
 import Combine
 
-// エラーの種類を定義
+// エラーenum (fetchFailedがあるか確認)
 enum HealthKitError: Error, LocalizedError {
     case dataTypeNotAvailable
     case deviceNotSupported
-    case authorizationFailed // 以前から(必要なら)
+    // case authorizationFailed // 必要なら
     case saveFailed(Error?)
-    case fetchFailed(Error?) // ← 追加: データ取得失敗エラー
+    case fetchFailed(Error?) // データ取得失敗エラー
 
-    // エラーメッセージを返す部分も修正
     var errorDescription: String? {
         switch self {
         case .dataTypeNotAvailable:
-            return "水分データタイプが利用できません。"
+            return "必要なデータタイプが利用できません。" // 水分/歩数 両方で使う可能性
         case .deviceNotSupported:
             return "このデバイスではHealthKitは利用できません。"
-        case .authorizationFailed:
-             return "ヘルスケアへのアクセスが許可されませんでした。" // 必要なら
         case .saveFailed(let error):
              return "データの保存に失敗しました: \(error?.localizedDescription ?? "不明なエラー")"
-        case .fetchFailed(let error): // ← 追加
+        case .fetchFailed(let error):
              return "データの取得に失敗しました: \(error?.localizedDescription ?? "不明なエラー")"
         }
     }
 }
 
-class HealthKitManager: ObservableObject {
 
+class HealthKitManager: ObservableObject {
     let healthStore = HKHealthStore()
 
     // --- requestAuthorization メソッドを修正 ---
     func requestAuthorization() async throws -> Bool {
-        guard let waterType = HKObjectType.quantityType(forIdentifier: .dietaryWater) else {
-            print("水分データタイプが利用できません")
+        // 扱うデータタイプを取得（水分と歩数）
+        guard let waterType = HKObjectType.quantityType(forIdentifier: .dietaryWater),
+              let stepType = HKObjectType.quantityType(forIdentifier: .stepCount) // <-- 歩数を追加
+        else {
+            print("必要なデータタイプが利用できません")
             throw HealthKitError.dataTypeNotAvailable
         }
-        // 書き込みたいタイプ
+
+        // 書き込みたいタイプ（水分のみ）
         let typesToWrite: Set = [waterType]
-        // ★★★ 読み取りたいタイプを追加 ★★★
-        let typesToRead: Set = [waterType]
+        // ★★★ 読み取りたいタイプ（水分と歩数）★★★
+        let typesToRead: Set = [waterType, stepType] // <-- 歩数を追加
 
         guard HKHealthStore.isHealthDataAvailable() else {
             print("このデバイスではHealthKitは利用できません")
@@ -51,15 +52,13 @@ class HealthKitManager: ObservableObject {
         // ★★★ read: パラメータに typesToRead を指定 ★★★
         try await healthStore.requestAuthorization(toShare: typesToWrite, read: typesToRead)
         print("権限リクエストが完了しました。")
-        // 注：ユーザーが実際に何を許可したかは別途確認が必要だが、
-        //     エラーなく完了すればリクエスト処理自体は成功とみなす。
-        return true
+        return true // エラーなければ完了
     }
 
     // --- saveWaterIntake メソッドは変更なし ---
     func saveWaterIntake(amount: Double) async throws {
-        // ... (以前のコードのまま) ...
-        guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
+        // ... (変更なし) ...
+         guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
              print("水分データタイプが利用できません")
              throw HealthKitError.dataTypeNotAvailable
          }
@@ -75,48 +74,72 @@ class HealthKitManager: ObservableObject {
          }
     }
 
-    // --- ★★★ 今日の合計値を取得するメソッドを追加 ★★★ ---
+    // --- fetchTodaysWaterIntake メソッドは変更なし ---
     func fetchTodaysWaterIntake() async throws -> Double {
+        // ... (前回のコードのまま) ...
         guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
             print("水分データタイプが利用できません")
             throw HealthKitError.dataTypeNotAvailable
         }
-
-        // 時間範囲（今日の0時〜現在）を指定
         let calendar = Calendar.current
-        let startDate = calendar.startOfDay(for: Date()) // 今日の0時0分
-        let endDate = Date() // 現在時刻
-
-        // 時間範囲でデータを絞り込むための条件 (Predicate)
+        let startDate = calendar.startOfDay(for: Date())
+        let endDate = Date()
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-
-        // 合計値を取得するクエリ (HKStatisticsQuery) - これは完了ハンドラ形式
-        // async/await で使えるようにラップします
         return try await withCheckedThrowingContinuation { continuation in
             let query = HKStatisticsQuery(quantityType: waterType,
                                           quantitySamplePredicate: predicate,
-                                          options: .cumulativeSum) { _, result, error in // データ取得後の処理
-                // エラーがあればエラーを投げて中断
+                                          options: .cumulativeSum) { _, result, error in
                 if let error = error {
                     print("今日の水分合計の取得に失敗しました: \(error.localizedDescription)")
                     continuation.resume(throwing: HealthKitError.fetchFailed(error))
                     return
                 }
-
-                // 合計値を取得
                 var totalAmount: Double = 0.0
                 if let sumQuantity = result?.sumQuantity() {
-                    // 単位をミリリットルに変換して値を取得
                     totalAmount = sumQuantity.doubleValue(for: .literUnit(with: .milli))
                     print("今日の合計水分摂取量(取得成功): \(totalAmount) ml")
                 } else {
-                    // データがない場合 (エラーではない)
                     print("今日の合計水分摂取量(データなし): 0 ml")
                 }
-                // 取得した合計値 (0.0の場合も含む) を返す
                 continuation.resume(returning: totalAmount)
             }
-            // クエリを実行開始
+            healthStore.execute(query)
+        }
+    }
+
+    // --- ★★★ 今日の歩数を取得するメソッドを追加 ★★★ ---
+    func fetchTodaysStepCount() async throws -> Double {
+        guard let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            print("歩数データタイプが利用できません")
+            throw HealthKitError.dataTypeNotAvailable
+        }
+
+        let calendar = Calendar.current
+        let startDate = calendar.startOfDay(for: Date()) // 今日の0時
+        let endDate = Date() // 現在時刻
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+
+        // 合計値を取得するクエリ (歩数も cumulativeSum でOK)
+        return try await withCheckedThrowingContinuation { continuation in
+            let query = HKStatisticsQuery(quantityType: stepType,
+                                          quantitySamplePredicate: predicate,
+                                          options: .cumulativeSum) { _, result, error in
+                if let error = error {
+                    print("今日の歩数合計の取得に失敗しました: \(error.localizedDescription)")
+                    continuation.resume(throwing: HealthKitError.fetchFailed(error))
+                    return
+                }
+
+                var totalSteps: Double = 0.0
+                if let sumQuantity = result?.sumQuantity() {
+                    // 歩数の単位は .count()
+                    totalSteps = sumQuantity.doubleValue(for: .count())
+                    print("今日の合計歩数(取得成功): \(totalSteps) 歩")
+                } else {
+                    print("今日の合計歩数(データなし): 0 歩")
+                }
+                continuation.resume(returning: totalSteps)
+            }
             healthStore.execute(query)
         }
     }
