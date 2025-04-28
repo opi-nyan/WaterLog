@@ -14,7 +14,7 @@
 		318845652DB91A14009D9043 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318845642DB91A14009D9043 /* HealthKitManager.swift */; };
 		318B38AB2DB92518001955AC /* WaterPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B38AA2DB92518001955AC /* WaterPreset.swift */; };
 		318B38AD2DB9254B001955AC /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B38AC2DB9254B001955AC /* PresetManager.swift */; };
-		31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */; };
+		31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		318845642DB91A14009D9043 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		318B38AA2DB92518001955AC /* WaterPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterPreset.swift; sourceTree = "<group>"; };
 		318B38AC2DB9254B001955AC /* PresetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManager.swift; sourceTree = "<group>"; };
-		31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFixedWaterIntent.swift.swift; sourceTree = "<group>"; };
+		31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFixedWaterIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		318845482DB910DD009D9043 = {
 			isa = PBXGroup;
 			children = (
-				31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift */,
+				31B832182DBF376C001A5703 /* RecordFixedWaterIntent.swift */,
 				318845532DB910DD009D9043 /* SimpleWaterLog */,
 				318845522DB910DD009D9043 /* Products */,
 			);
@@ -72,7 +72,7 @@
 				318B38AA2DB92518001955AC /* WaterPreset.swift */,
 				318B38AC2DB9254B001955AC /* PresetManager.swift */,
 			);
-			path = SimpleWaterLog;
+			name = SimpleWaterLog;
 			sourceTree = "<group>";
 		};
 		3188455A2DB910E0009D9043 /* Preview Content */ = {
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift.swift in Sources */,
+				31B832192DBF376C001A5703 /* RecordFixedWaterIntent.swift in Sources */,
 				318845572DB910DD009D9043 /* ContentView.swift in Sources */,
 				318845552DB910DD009D9043 /* SimpleWaterLogApp.swift in Sources */,
 				318B38AB2DB92518001955AC /* WaterPreset.swift in Sources */,
