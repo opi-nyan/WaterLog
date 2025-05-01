@@ -7,6 +7,8 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var todaysTotal: Double = 0.0
     @State private var todaysSteps: Double = 0.0
+    @Environment(\.scenePhase) private var scenePhase // ← これを追加！
+    
 
     var body: some View {
         // 画面全体をナビゲーションビューで囲む（タイトル表示のため）
@@ -79,6 +81,14 @@ struct ContentView: View {
                     showingAlert = false
                 }
             }
+            // ↓↓↓ .onChange はこの位置に移動させる ↓↓↓
+            .onChange(of: scenePhase) { oldPhase, newPhase in
+                if newPhase == .active {
+                    print("アプリがアクティブになりました。データを更新します。")
+                    loadTodaysTotal()
+                    loadTodaysSteps()
+                }
+            } // ← .onChange をここに追加
         } // NavigationView End
     }
 
